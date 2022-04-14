@@ -72,10 +72,12 @@ class Ui_Dialog(object):
             s = gRes.apiUsing(mystr)
         return s
 
-if __name__ == "__main__":
-        app = QtWidgets.QApplication(sys.argv)
-        main = QtWidgets.QMainWindow()
-        mainwindow = Ui_Dialog()
-        mainwindow.setupUi(main)
-        main.show()
-        sys.exit(app.exec())
+def Mmain():
+    app = QtWidgets.QApplication(sys.argv)
+    main = QtWidgets.QMainWindow()
+    mainwindow = Ui_Dialog()
+    mainwindow.setupUi(main)
+    main.show()
+    sys.exit(app.exec())
+# if __name__ == "__main__":
+#       main()

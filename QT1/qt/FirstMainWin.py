@@ -8,6 +8,8 @@ import mainwin
 from vip import vip_ui, vip_y
 from qt.chat import chat_ui
 from qt.chat import chat_ipt1
+from qt.chat import getRes
+# from qt.chat.chat_ipt1 import main as mymain
 
 class FirstMainWin(QMainWindow):
     def __init__(self, parent = None):
@@ -86,12 +88,21 @@ def Chat_handleCalc():
 
 def Chat_1_handleCalc():
     print('已点击打字输入按钮')
-    dialog = chat_ipt1.Ui_Dialog()#小Q聊天界面
-    dialog.setupUi(chat_1_child)
+    # dialog = chat_ipt1.Ui_Dialog()#小Q聊天界面
+    dialogQ.setupUi(chat_1_child)#为什么只有在主函数里声明了dialog才能正常显示...???
     chat_1_child.setWindowTitle('打字输入')
     chat_1_child.show()
-    # if(dialog.pushButton_.clicked()==1):
-    #         dialog.get_response()
+    # chat_1_child.pushButton_.clicked.connect(mymain)
+    # dialogQ.pushButton_.clicked.connect(Chat_Q_handleCalc)
+
+# def Chat_Q_handleCalc():
+#     # dialogQ.get_response()
+#     print("点击发送按钮..")
+#     enterstr = dialogQ.plainTextEdit_2.toPlainText()
+#     m = getRes.gRes.getRes(enterstr)
+#     s = ">>你:" + enterstr + "\n" + m
+#     dialogQ.plainTextEdit.setPlainText(s)
+#     dialogQ.setupUi(chat_1_child)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
@@ -106,6 +117,9 @@ if __name__ == '__main__':
     vip_y_child = Vip_y_dialog5()
     chat_child = Chat_dialog()
     chat_1_child = Chat_1_dialog()
+
+    dialogQ = chat_ipt1.Ui_Dialog()  # 小Q聊天界面
+    # dialogQ.setupUi(chat_1_child)
 
     # 主界面调用按键
     ui.pushButton_5.clicked.connect(Vip_handleCalc)

@@ -8,7 +8,7 @@ import random
 
 
 def loadData():
-    f = open(r'.\data\u.data')  ##user id | food id | rating | timestamp
+    f = open(r'E:\大创5人\交互界面2.0\QT1\qt\chat\data\u.data')  ##user id | food id | rating | timestamp
     data = []
     for i in range(100000):
         h = f.readline().split('\t')
